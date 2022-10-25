@@ -1,7 +1,8 @@
 const int echo = 4;
 const int trig = 5;
 const int led = 5;
-float distance,duration;
+float duration;
+int distance;
 
 void setup(){
  Serial.begin(9600);
@@ -23,16 +24,8 @@ interrupts();
 
 distance = (duration/2) * 0.034;
 //(duration/2) * 0.034;
-Serial.print(distance );
-Serial.println(" cm");
+Serial.println(distance );
+Serial.print(" cm");
  
-if(distance<25){
-digitalWrite(led , HIGH);
-;
-}
-
-if(distance>25){
-digitalWrite(led , LOW);
-
-}
+analogWrite(5,distance)
 }
