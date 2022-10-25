@@ -27,6 +27,14 @@ distance = (duration/2) * 0.034;
 //(duration/2) * 0.034;
 Serial.println(distance );
 Serial.print(" cm");
+
  
-analogWrite(5,distance)
+analogWrite(led,distance)
+
+if (distance >255){
+  analogWrite(led,255);
+}
+if (distance <0){
+  analogWrite(led,0);
+}
 }
