@@ -7,7 +7,7 @@ void setup(){
  pinMode(echo, INPUT);
  pinMode(trig, OUTPUT);
  pinMode(led, OUTPUT);
-
+}
 void loop(){
  
 }
