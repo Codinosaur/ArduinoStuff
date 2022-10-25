@@ -10,6 +10,7 @@ void setup(){
  pinMode(led, OUTPUT);
  Serial.begin(9600);
 }
+
 void loop() {
   // put your main code here, to run repeatedly:
 digitalWrite(trig , LOW);
@@ -25,6 +26,8 @@ distance = (duration/2) * 0.034;
 //(duration/2) * 0.034;
 Serial.print(distance );
 Serial.println(" cm");
+=======
+void loop(){
  
 if(distance<25){
 digitalWrite(led , HIGH);
