@@ -1,4 +1,4 @@
-int i = 0;
+int i;
 
 long readUltrasonicDistance(int triggerPin, int echoPin)
 {
@@ -21,6 +21,13 @@ void setup()
 
 void loop()
 {
-  Serial.println(0.01723 * readUltrasonicDistance(9, 8));
+  i= 0.01723 * readUltrasonicDistance(9, 8);
+  Serial.println(i);
   delay(10); // Delay a little bit to improve simulation performance
+  if (i>255){
+    analogWrite(5,255);
+  }
+  else if (i<0){
+    analogWrite(5,0);
+  }
 }
