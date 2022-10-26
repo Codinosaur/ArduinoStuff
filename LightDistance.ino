@@ -1,41 +1,26 @@
-const int echo = 4;
-const int trig = 5;
-const int led = 5;
-float distance,duration;
+int i = 0;
 
-void setup(){
- Serial.begin(9600);
- pinMode(echo, INPUT);
- pinMode(trig, OUTPUT);
- pinMode(led, OUTPUT);
- Serial.begin(9600);
+long readUltrasonicDistance(int triggerPin, int echoPin)
+{
+  pinMode(triggerPin, OUTPUT);  // Clear the trigger
+  digitalWrite(triggerPin, LOW);
+  delayMicroseconds(2);
+  // Sets the trigger pin to HIGH state for 10 microseconds
+  digitalWrite(triggerPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(triggerPin, LOW);
+  pinMode(echoPin, INPUT);
+  // Reads the echo pin, and returns the sound wave travel time in microseconds
+  return pulseIn(echoPin, HIGH);
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-digitalWrite(trig , LOW);
-delayMicroseconds(2);
-digitalWrite(trig , HIGH);
-delayMicroseconds(10);
-digitalWrite(trig , LOW);
-noInterrupts();
-duration = pulseIn(echo , HIGH);
-interrupts();
-
-distance = (duration/2) * 0.034;
-//(duration/2) * 0.034;
-Serial.print(distance );
-Serial.println(" cm");
-=======
-void loop(){
- 
-if(distance<25){
-digitalWrite(led , HIGH);
-;
+void setup()
+{
+  Serial.begin(9600);
 }
 
-if(distance>25){
-digitalWrite(led , LOW);
-
-}
+void loop()
+{
+  Serial.println(0.01723 * readUltrasonicDistance(9, 8));
+  delay(10); // Delay a little bit to improve simulation performance
 }
