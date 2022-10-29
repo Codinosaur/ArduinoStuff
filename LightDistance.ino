@@ -1,4 +1,7 @@
-int i;
+const int echo = 13;
+const int trig = 12;
+const int led = 5;
+int distance;
 
 long readUltrasonicDistance(int triggerPin, int echoPin)
 {
@@ -14,20 +17,28 @@ long readUltrasonicDistance(int triggerPin, int echoPin)
   return pulseIn(echoPin, HIGH);
 }
 
-void setup()
-{
-  Serial.begin(9600);
+
+void setup(){
+ Serial.begin(9600);
+ pinMode(echo, INPUT);
+ pinMode(trig, OUTPUT);
+ pinMode(led, OUTPUT);
 }
 
-void loop()
-{
-  i= 0.01723 * readUltrasonicDistance(9, 8);
-  Serial.println(i);
-  delay(10); // Delay a little bit to improve simulation performance
-  if (i>255){
-    analogWrite(5,255);
-  }
-  else if (i<0){
-    analogWrite(5,0);
-  }
+void loop() {
+distance = 0.01723 * readUltrasonicDistance(trig, echo); //(duration/2) * 0.034;
+Serial.println(distance);
+Serial.print(" cm");
+
+ 
+analogWrite(led,distance);
+
+//limit
+if (distance >255){
+  analogWrite(led,255);
+}
+if (distance <0){
+  analogWrite(led,0);
+}
+
 }
