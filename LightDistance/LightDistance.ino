@@ -28,7 +28,7 @@ void setup(){
 void loop() {
 distance = int(0.01723 * readUltrasonicDistance(trig, echo)); //(duration/2) * 0.034;
 Serial.println(distance);
-Serial.print("cm");
+Serial.print("cm: ");
 
  
 analogWrite(led,distance);
