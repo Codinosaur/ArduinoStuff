@@ -26,7 +26,7 @@ void setup(){
 }
 
 void loop() {
-distance = 0.01723 * readUltrasonicDistance(trig, echo); //(duration/2) * 0.034;
+distance = int(0.01723 * readUltrasonicDistance(trig, echo)); //(duration/2) * 0.034;
 Serial.println(distance);
 Serial.print("cm");
 
