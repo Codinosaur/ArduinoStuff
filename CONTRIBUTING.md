@@ -26,10 +26,10 @@ Always write a clear log message for your commits. One-line messages are fine fo
 
 Start reading our code and you'll get the hang of it. We optimize for readability:
 
-  * We use Arduino IDE for writing code.
+  * We use Arduino IDE and Visual Studio Code for writing code.
   * Arduino UNO is the supported board.
-  * Provide notice for addition of new electronic components i.e new motors,sensors or shields.
+  * Provide notice for addition of new electronic components i.e new motors, sensors or shields.
   * We almost ALWAYS use  ```c++ ``` for development.
-  * However integration of new programming language support the main  ```.ino``` file can be done.
-  * Using comments is highly recommended to improve readibility.
+  * However integration of new programming languages support the main  ```.ino``` file can be done.
+  * Using comments is highly recommended to improve readability.
   
