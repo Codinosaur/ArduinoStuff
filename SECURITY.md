@@ -2,12 +2,16 @@
 
 ## Supported Versions
 
-We do our coding in the official arduino IDE.The versions supported are:-
+We do our coding in the official Arduino IDE and Visual Studio Code. The versions supported are:-
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 2.0     | :white_check_mark: |
+| Version (Arduino IDE) | Supported | 
+| ------- | ------------------ |               
+| 2.0     | :white_check_mark: |              
 | 1.8.18. | :white_check_mark: |
+
+| Version (Visual Studio Code) | Supported |
+| ------- | ------------------ |
+|  1.x    |  ✅               |
 
 ## Reporting a Vulnerability
 
