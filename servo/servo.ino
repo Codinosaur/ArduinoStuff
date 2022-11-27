@@ -10,16 +10,20 @@ void setup() {
 } 
 
 void loop() {
+    for (int angle = -180; angle <= 0; angle += 1) {
+    float angle_rad = angle * M_PI / 180;
+    int sin_result = int((sin(angle_rad)+1)*90);
+    myservo.write(sin_result);  // tell servo to go to position in variable 'sin_result' 
+    delay(15); // wait for servo to reach its position          
+    Serial.println(sin_result); // prints the result to the Serial Monitor
+    
+  }
+  for (int angle = 180; angle >= 0; angle -= 1) {
+    float angle_rad = angle * M_PI / 180;
+    int sin_result = int((sin(angle_rad)+1)*90) ;
+    myservo.write(sin_result); // tell servo to go to position in variable 'sin_result'
+    delay(15); // wait for servo to reach its position
+    Serial.println(sin_result); // prints the result to the Serial Monitor
+  }
   
-  for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
-    // in steps of 1 degree
-    myservo.write(pos);              // tell servo to go to position in variable 'pos'
-    Serial.println(pos);
-    delay(15);                       // waits 15ms for the servo to reach the position
-  }
-  for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
-    myservo.write(pos);              // tell servo to go to position in variable 'pos'
-    Serial.println(pos);
-    delay(15);                       // waits 15ms for the servo to reach the position
-  }
 }
