@@ -2,10 +2,12 @@
 
 Servo myservo; 
 
+const int serpin = 9 //the pin to connect the servos'signal pin
+
 int pos = 0;    
 
 void setup() {
-  myservo.attach(9); // attaches the servo on pin 9 to the servo object
+  myservo.attach(serpin); // attaches the servo on pin 9 to the servo object
   Serial.begin(9600); 
 } 
 
